@@ -1,0 +1,53 @@
+﻿<table class="table table-sm">
+    <h3>Список моделей</h3>
+    <tr><th></th><th></th></tr>
+    @foreach (var item in @ViewBag.Models)
+    {
+        @if (item.Active)
+        {
+            <tr>
+                <td>
+
+                    <input type="submit" class="btn btn-light withheigh100 textLeft" value="@item.Name" />
+
+                </td>
+                <td class='alnright'>
+
+                    <a asp-controller="Model" asp-action="UpdateModel" asp-route-id="@item.Id" asp-route-BrandId="@ViewBag.BrandId" class="inlineBlock btn btn-primary">Изменить</a>
+
+                    <form asp-controller="Model" asp-action="DeleteModel" method="post" asp-route-id="@item.Id" asp-route-brandId="@ViewBag.BrandId" class="inlineBlock">
+                        <input type="submit" class="btn btn-danger" value="Удалить" />
+                    </form>
+
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>
+
+                    <input type="submit" class="btn btn-light withheigh100 textLeft" value="@item.Name" style="color: gray" />
+
+                </td>
+                <td class='alnright'>
+
+                    <a asp-controller="Model" asp-action="UpdateModel" asp-route-id="@item.Id" asp-route-BrandId="@ViewBag.BrandId" class="inlineBlock btn btn-primary">Изменить</a>
+
+                    <form asp-controller="Model" asp-action="DeleteModel" method="post" asp-route-id="@item.Id" asp-route-brandId="@ViewBag.BrandId" class="inlineBlock">
+                        <input type="submit" class="btn btn-danger" value="Удалить" />
+                    </form>
+
+                </td>
+            </tr>
+        }
+
+    }
+</table>
+
+<a asp-controller="Brand" asp-action="Index" class="inlineBlock btn btn-primary">Назад</a>
+
+<form method="post" asp-controller="Model" asp-route-brandId="@ViewBag.BrandId" asp-action="AddModel">
+<button type="button" class="btn btn-primary btn-circle bottomRightRectangle" data-bs-toggle="modal" data-bs-target="#modalAddModel">+</button>
+<partial name="~/Views/Model/AddModel.cshtml" />
+</form>

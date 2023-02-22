@@ -1,0 +1,54 @@
+﻿
+<table class="table table-sm">
+    <h3>Список брендов</h3>
+    <tr><th></th><th></th></tr>
+    @foreach (var item in @ViewBag.Brands)
+    {
+        @if(item.Active){
+            <tr>
+                <td>
+
+                    <form method="get" asp-controller="Model" asp-action="Index" asp-route-id="@item.Id">
+                        <input type="submit" class="btn btn-light withheigh100 textLeft" value="@item.Name" />
+                    </form>
+
+                </td>
+                <td class='alnright'>
+
+                    <a asp-controller="Brand" asp-action="UpdateBrand" asp-route-id="@item.Id" class="inlineBlock btn btn-primary">Изменить</a>
+
+                    <form asp-controller="Brand" asp-action="DeleteBrand" method="post" asp-route-id="@item.Id" class="inlineBlock">
+                        <input type="submit" class="btn btn-danger" value="Удалить" />
+                    </form>
+
+                </td>
+            </tr>
+        }
+        else{
+            <tr>
+                <td>
+
+                    <form method="get" asp-controller="Model" asp-action="Index" asp-route-id="@item.Id" >
+                        <input type="submit" class="btn btn-light withheigh100 textLeft" value="@item.Name" style="color: gray"/>
+                    </form>
+
+                </td>
+                <td class='alnright'>
+
+                    <a asp-controller="Brand" asp-action="UpdateBrand" asp-route-id="@item.Id" class="inlineBlock btn btn-primary">Изменить</a>
+
+                    <form asp-controller="Brand" asp-action="DeleteBrand" method="post" asp-route-id="@item.Id" class="inlineBlock">
+                        <input type="submit" class="btn btn-danger" value="Удалить" />
+                    </form>
+
+                </td>
+            </tr>
+        }
+        
+    }
+</table>
+
+<a asp-controller="Model" asp-action="GetAll" class="inlineBlock btn btn-primary">Полный список моделей</a>
+
+<button type="button" class="btn btn-primary btn-circle bottomRightRectangle" data-bs-toggle="modal" data-bs-target="#modalAddBrand">+</button>
+<partial name="~/Views/Brand/AddBrand.cshtml" />

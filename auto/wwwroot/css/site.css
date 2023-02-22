@@ -1,0 +1,71 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 0;
+    font-size: 16px;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.bottomRightRectangle {
+    position: fixed;
+    bottom: 7%;
+    right: 30px;
+    z-index: 1000;
+}
+
+.alnright {
+    text-align: right;
+}
+
+.alnleft {
+    text-align: left;
+}
+
+.inlineBlock {
+    vertical-align: central;
+    display: inline-block;
+}
+
+.withheigh100 {
+    width: 100%;
+    height: 100%;
+}
+
+.complitedBtnSize {
+    width: 40px;
+    height: 40px;
+}
+
+.complited {
+    text-decoration: line-through;
+}
+
+td:last-child {
+    text-align: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 20px;
+}

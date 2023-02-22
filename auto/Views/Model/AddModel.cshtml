@@ -1,0 +1,27 @@
+﻿@model auto.Domain.Entities.Model
+
+<div class="modal" tabindex="-1" id="modalAddModel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Добавить модель</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+                <div class="modal-body">
+                    <br />
+                    <label asp-for="Name"></label><br />
+                    <input asp-for="Name" type="text" class="form-control" name="Name" /><br />
+                    <span asp-validation-for="Name"></span>
+
+                    <br />
+                    <label asp-for="Active"></label><br />
+                    <input asp-for="Active" type="checkbox" name="Active" /><br />
+                    <span asp-validation-for="Active"></span>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Добавить" class="btn btn-primary" />
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+        </div>
+    </div>
+</div>

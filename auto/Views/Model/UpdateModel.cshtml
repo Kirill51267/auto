@@ -1,0 +1,15 @@
+﻿@model auto.Domain.Entities.Model
+
+<form method="post" asp-controller="Model" asp-action="UpdateModel" asp-route-id="@Model.Id" asp-route-brandId="@ViewBag.BrandId">
+
+    <br />
+    <label asp-for="Name"></label>
+    <br />
+    <input asp-for="Name" type="text" class="form-control" name="Name" />
+    <br />
+    <label asp-for="Active"></label>
+    <br />
+    <input asp-for="Active" type="checkbox" name="Active" />
+    <br />
+    <input class="btn btn-primary" type="submit" value="Сохранить" />
+</form>
